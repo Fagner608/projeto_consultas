@@ -1,0 +1,17 @@
+/.vscode
+*__pycache__
+*.log
+*.xlsx
+*.csv
+*.xls
+*.db
+tmp/*
+/download
+/files
+*ipynb
+/.ipynb_checkpoints
+/.mypy_cache
+.venv
+.env
+*.parquet
+*.zip
