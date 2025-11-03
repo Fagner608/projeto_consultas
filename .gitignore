@@ -8,7 +8,6 @@
 tmp/*
 /download
 /files
-*ipynb
 /.ipynb_checkpoints
 /.mypy_cache
 .venv
