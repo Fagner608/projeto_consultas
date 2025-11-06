@@ -179,10 +179,10 @@ with st.expander("⚙️ Ajustar parâmetros do modelo"):
     with col2:
         MCU = st.slider(
             "MCU (R$)",
-            min_value=5.0,
-            max_value=15.0,
+            min_value=-30.00,
+            max_value=30.0,
             value=8.60,
-            step=0.1
+            step=1.0
         )
     with col3:
         CUSTO_CONSULTA = st.slider(
@@ -208,7 +208,7 @@ LIMIAR = 0.001
 
 dados = pd.DataFrame({"consulta": np.linspace(1000, 75000, 100)})
 dados["custo"] = dados["consulta"] * CUSTO_CONSULTA
-dados["mcu"] = round((dados["consulta"] * TAXA_CONVERSAO) * MCU, 2)
+dados["mcu"] = round((dados["consulta"]) * MCU, 2)
 dados["dif"] = round(dados["mcu"] - dados["custo"].shift(), 2)
 dados["retorno_dif"] = round(dados["dif"] / dados["dif"].shift(), 2)
 dados["retorno_dif_smooth"] = dados["retorno_dif"].rolling(window=3, center=True).mean()
